@@ -5,6 +5,7 @@ import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
 import sensible from '@fastify/sensible'
 import { authRoutes } from './routes/auth'
+import { environmentRoutes } from './routes/environments'
 
 const app = Fastify({ logger: { level: 'info' } })
 
@@ -24,6 +25,7 @@ async function bootstrap() {
   })
 
   await app.register(authRoutes, { prefix: '/api/auth' })
+  await app.register(environmentRoutes, { prefix: '/api' })
 
   const port = parseInt(process.env.PORT || '3001')
   await app.listen({ port, host: '0.0.0.0' })
