@@ -5,7 +5,9 @@ import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
 import sensible from '@fastify/sensible'
 import { authRoutes } from './routes/auth'
+import { flagRoutes } from './routes/flags'
 import { environmentRoutes } from './routes/environments'
+import { warmCache } from './services/flagEvaluator'
 
 const app = Fastify({ logger: { level: 'info' } })
 
@@ -25,10 +27,13 @@ async function bootstrap() {
   })
 
   await app.register(authRoutes, { prefix: '/api/auth' })
+  await app.register(flagRoutes, { prefix: '/api' })
   await app.register(environmentRoutes, { prefix: '/api' })
 
   const port = parseInt(process.env.PORT || '3001')
   await app.listen({ port, host: '0.0.0.0' })
+
+  await warmCache()
 }
 
 bootstrap().catch(err => {
