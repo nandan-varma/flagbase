@@ -8,6 +8,7 @@ import { authRoutes } from './routes/auth'
 import { flagRoutes } from './routes/flags'
 import { environmentRoutes } from './routes/environments'
 import { segmentRoutes } from './routes/segments'
+import { sdkRoutes } from './routes/sdk'
 import { warmCache } from './services/flagEvaluator'
 
 const app = Fastify({ logger: { level: 'info' } })
@@ -31,6 +32,7 @@ async function bootstrap() {
   await app.register(flagRoutes, { prefix: '/api' })
   await app.register(environmentRoutes, { prefix: '/api' })
   await app.register(segmentRoutes, { prefix: '/api' })
+  await app.register(sdkRoutes, { prefix: '/api/sdk' })
 
   const port = parseInt(process.env.PORT || '3001')
   await app.listen({ port, host: '0.0.0.0' })
