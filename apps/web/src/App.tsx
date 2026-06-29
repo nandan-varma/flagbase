@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { AuthProvider, useAuth } from './context/AuthContext'
+import { EnvProvider } from './context/EnvContext'
+import { Shell } from './components/layout/Shell'
 import { LoginPage } from './pages/LoginPage'
+import { DashboardPage } from './pages/DashboardPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,7 +32,14 @@ export default function App() {
               path="/*"
               element={
                 <AuthGuard>
-                  <div className="p-6 text-sm text-gray-500">Signed in.</div>
+                  <EnvProvider>
+                    <Shell>
+                      <Routes>
+                        <Route path="/" element={<Navigate to="/flags" replace />} />
+                        <Route path="/flags" element={<DashboardPage />} />
+                      </Routes>
+                    </Shell>
+                  </EnvProvider>
                 </AuthGuard>
               }
             />
