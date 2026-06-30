@@ -5,6 +5,7 @@ import { EnvProvider } from './context/EnvContext'
 import { Shell } from './components/layout/Shell'
 import { LoginPage } from './pages/LoginPage'
 import { DashboardPage } from './pages/DashboardPage'
+import { FlagDetailPage } from './pages/FlagDetailPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,6 +38,7 @@ export default function App() {
                       <Routes>
                         <Route path="/" element={<Navigate to="/flags" replace />} />
                         <Route path="/flags" element={<DashboardPage />} />
+                        <Route path="/flags/:id" element={<FlagDetailPage />} />
                       </Routes>
                     </Shell>
                   </EnvProvider>
