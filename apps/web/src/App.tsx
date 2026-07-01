@@ -6,6 +6,7 @@ import { Shell } from './components/layout/Shell'
 import { LoginPage } from './pages/LoginPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { FlagDetailPage } from './pages/FlagDetailPage'
+import { SegmentsPage } from './pages/SegmentsPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +40,7 @@ export default function App() {
                         <Route path="/" element={<Navigate to="/flags" replace />} />
                         <Route path="/flags" element={<DashboardPage />} />
                         <Route path="/flags/:id" element={<FlagDetailPage />} />
+                        <Route path="/segments" element={<SegmentsPage />} />
                       </Routes>
                     </Shell>
                   </EnvProvider>
