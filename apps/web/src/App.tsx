@@ -7,6 +7,7 @@ import { LoginPage } from './pages/LoginPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { FlagDetailPage } from './pages/FlagDetailPage'
 import { SegmentsPage } from './pages/SegmentsPage'
+import { EnvironmentsPage } from './pages/EnvironmentsPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,6 +42,7 @@ export default function App() {
                         <Route path="/flags" element={<DashboardPage />} />
                         <Route path="/flags/:id" element={<FlagDetailPage />} />
                         <Route path="/segments" element={<SegmentsPage />} />
+                        <Route path="/environments" element={<EnvironmentsPage />} />
                       </Routes>
                     </Shell>
                   </EnvProvider>
