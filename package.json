@@ -10,6 +10,6 @@
     "db:studio": "pnpm --filter server db:studio"
   },
   "devDependencies": {
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3"
   }
 }
