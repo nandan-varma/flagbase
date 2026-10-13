@@ -94,7 +94,7 @@ function RuleCard({ rule, flagType, onChange, onRemove }: RuleCardProps) {
         <input
           value={rule.name}
           onChange={e => onChange({ ...rule, name: e.target.value })}
-          className="flex-1 text-sm font-medium border-none outline-none focus:ring-0 bg-transparent"
+          className="flex-1 text-sm font-medium border-none outline-hidden focus:ring-0 bg-transparent"
           placeholder="Rule name"
         />
         <button onClick={onRemove} className="text-gray-400 hover:text-red-500">
@@ -108,7 +108,7 @@ function RuleCard({ rule, flagType, onChange, onRemove }: RuleCardProps) {
             <select
               value={cond.attribute}
               onChange={e => updateCondition(idx, { attribute: e.target.value })}
-              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
             >
               {COMMON_ATTRIBUTES.map(a => <option key={a} value={a}>{a}</option>)}
               {!COMMON_ATTRIBUTES.includes(cond.attribute) && (
@@ -118,7 +118,7 @@ function RuleCard({ rule, flagType, onChange, onRemove }: RuleCardProps) {
             <select
               value={cond.operator}
               onChange={e => updateCondition(idx, { operator: e.target.value as Condition['operator'] })}
-              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
             >
               {OPERATORS.map(op => <option key={op.value} value={op.value}>{op.label}</option>)}
             </select>
@@ -130,7 +130,7 @@ function RuleCard({ rule, flagType, onChange, onRemove }: RuleCardProps) {
                 updateCondition(idx, { value: val })
               }}
               placeholder={cond.operator === 'inList' ? 'val1, val2, ...' : 'value'}
-              className="flex-1 min-w-24 text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="flex-1 min-w-24 text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
             />
             <button onClick={() => removeCondition(idx)} className="text-gray-400 hover:text-red-500">
               <X className="h-3 w-3" />
@@ -152,7 +152,7 @@ function RuleCard({ rule, flagType, onChange, onRemove }: RuleCardProps) {
             <select
               value={rule.serveValue}
               onChange={e => onChange({ ...rule, serveValue: e.target.value })}
-              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
             >
               <option value="true">true</option>
               <option value="false">false</option>
@@ -161,7 +161,7 @@ function RuleCard({ rule, flagType, onChange, onRemove }: RuleCardProps) {
             <input
               value={rule.serveValue}
               onChange={e => onChange({ ...rule, serveValue: e.target.value })}
-              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
             />
           )}
         </div>
@@ -173,7 +173,7 @@ function RuleCard({ rule, flagType, onChange, onRemove }: RuleCardProps) {
             max={100}
             value={rule.rolloutPercentage}
             onChange={e => onChange({ ...rule, rolloutPercentage: Number(e.target.value) })}
-            className="w-16 text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="w-16 text-xs border border-gray-200 rounded-lg px-2 py-1 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
           />
           <span className="text-xs text-gray-500">%</span>
         </div>

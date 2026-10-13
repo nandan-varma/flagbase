@@ -31,7 +31,7 @@ function CreateEnvModal({ onClose }: { onClose: () => void }) {
             value={name}
             onChange={e => setName(e.target.value)}
             placeholder="staging"
-            className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+            className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
           />
         </div>
         <div>
@@ -102,7 +102,7 @@ export function EnvironmentsPage() {
             <div key={env.id} className="flex items-center gap-4 px-4 py-3 border-b border-gray-100 last:border-0">
               <div className="flex items-center gap-3 flex-1">
                 <span
-                  className="w-3 h-3 rounded-full flex-shrink-0"
+                  className="w-3 h-3 rounded-full shrink-0"
                   style={{ backgroundColor: env.color ?? '#9CA3AF' }}
                 />
                 <div>
@@ -112,7 +112,7 @@ export function EnvironmentsPage() {
               </div>
               <button
                 onClick={() => deleteEnv(env.id)}
-                className="p-1.5 text-gray-400 hover:text-red-500 rounded"
+                className="p-1.5 text-gray-400 hover:text-red-500 rounded-sm"
               >
                 <Trash2 className="h-4 w-4" />
               </button>

@@ -16,7 +16,7 @@ export function EnvSwitcher() {
       <select
         value={envId ?? ''}
         onChange={e => setEnvId(e.target.value)}
-        className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+        className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
       >
         {environments.map(env => (
           <option key={env.id} value={env.id}>

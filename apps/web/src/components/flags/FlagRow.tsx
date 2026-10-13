@@ -49,11 +49,11 @@ export function FlagRow({ flag }: Props) {
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
           <span className="font-mono text-sm text-gray-900 truncate">{flag.key}</span>
-          <span className={clsx('text-xs px-1.5 py-0.5 rounded font-medium', TYPE_COLORS[flag.type] || 'bg-gray-100 text-gray-600')}>
+          <span className={clsx('text-xs px-1.5 py-0.5 rounded-sm font-medium', TYPE_COLORS[flag.type] || 'bg-gray-100 text-gray-600')}>
             {flag.type}
           </span>
           {flag.tags?.map(tag => (
-            <span key={tag} className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">
+            <span key={tag} className="text-xs px-1.5 py-0.5 rounded-sm bg-gray-100 text-gray-600">
               {tag}
             </span>
           ))}
@@ -62,7 +62,7 @@ export function FlagRow({ flag }: Props) {
       </div>
 
       {flag.envState && (
-        <div className="flex items-center gap-3 flex-shrink-0" onClick={e => e.preventDefault()}>
+        <div className="flex items-center gap-3 shrink-0" onClick={e => e.preventDefault()}>
           {flag.envState.rulesCount > 0 && (
             <span className="text-xs text-gray-500">{flag.envState.rulesCount} rule{flag.envState.rulesCount !== 1 ? 's' : ''}</span>
           )}

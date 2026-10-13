@@ -27,7 +27,7 @@ export function FlagList() {
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search flags…"
-            className="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
+            className="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-brand-500"
           />
         </div>
         <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
@@ -35,7 +35,7 @@ export function FlagList() {
             type="checkbox"
             checked={showArchived}
             onChange={e => setShowArchived(e.target.checked)}
-            className="rounded"
+            className="rounded-sm"
           />
           Archived
         </label>

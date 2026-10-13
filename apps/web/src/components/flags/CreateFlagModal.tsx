@@ -46,7 +46,7 @@ export function CreateFlagModal({ onClose }: Props) {
               value={key}
               onChange={e => setKey(e.target.value.toLowerCase().replace(/[^a-z0-9-_]/g, ''))}
               placeholder="new-checkout-flow"
-              className="w-full font-mono text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full font-mono text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
             <p className="text-xs text-gray-400 mt-1">Lowercase letters, numbers, hyphens, underscores only</p>
           </div>
@@ -56,7 +56,7 @@ export function CreateFlagModal({ onClose }: Props) {
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="New checkout flow"
-              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
           <div>
@@ -65,7 +65,7 @@ export function CreateFlagModal({ onClose }: Props) {
               value={description}
               onChange={e => setDescription(e.target.value)}
               rows={2}
-              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"
+              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500 resize-none"
             />
           </div>
           <div>
@@ -73,7 +73,7 @@ export function CreateFlagModal({ onClose }: Props) {
             <select
               value={type}
               onChange={e => setType(e.target.value as typeof type)}
-              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             >
               <option value="boolean">Boolean</option>
               <option value="string">String</option>
@@ -87,7 +87,7 @@ export function CreateFlagModal({ onClose }: Props) {
               value={tagsInput}
               onChange={e => setTagsInput(e.target.value)}
               placeholder="checkout, experiment"
-              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
             <p className="text-xs text-gray-400 mt-1">Comma-separated</p>
           </div>

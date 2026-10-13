@@ -39,7 +39,7 @@ export function LoginPage() {
           <h1 className="text-3xl font-bold text-brand-600">FlagBase</h1>
           <p className="text-gray-500 mt-1">Self-hosted feature flags</p>
         </div>
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+        <div className="bg-white rounded-2xl shadow-xs border border-gray-200 p-8">
           <h2 className="text-lg font-semibold text-gray-900 mb-6">
             {mode === 'login' ? 'Sign in' : 'Create account'}
           </h2>
@@ -51,7 +51,7 @@ export function LoginPage() {
                   required
                   value={orgName}
                   onChange={e => setOrgName(e.target.value)}
-                  className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+                  className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
                   placeholder="Acme Inc."
                 />
               </div>
@@ -63,7 +63,7 @@ export function LoginPage() {
                 required
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+                className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
                 placeholder="you@company.com"
               />
             </div>
@@ -75,7 +75,7 @@ export function LoginPage() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 minLength={mode === 'register' ? 8 : undefined}
-                className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+                className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
                 placeholder={mode === 'register' ? 'Minimum 8 characters' : ''}
               />
             </div>

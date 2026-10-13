@@ -21,7 +21,7 @@ function AuditLog({ flagId }: { flagId: string }) {
     <ul className="space-y-2">
       {entries.map(e => (
         <li key={e.id} className="flex items-center gap-3 text-sm">
-          <span className="font-mono text-xs bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded">{e.action}</span>
+          <span className="font-mono text-xs bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded-sm">{e.action}</span>
           <span className="text-gray-500">{e.userEmail ?? 'system'}</span>
           <span className="text-gray-400 ml-auto">{new Date(e.createdAt).toLocaleString()}</span>
         </li>
@@ -154,7 +154,7 @@ export function FlagDetailPage() {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <h1 className="text-2xl font-bold text-gray-900">{flag.name}</h1>
-              <span className={clsx('text-xs px-1.5 py-0.5 rounded font-medium', TYPE_COLORS[flag.type])}>
+              <span className={clsx('text-xs px-1.5 py-0.5 rounded-sm font-medium', TYPE_COLORS[flag.type])}>
                 {flag.type}
               </span>
             </div>
@@ -168,7 +168,7 @@ export function FlagDetailPage() {
             {flag.tags.length > 0 && (
               <div className="flex gap-1.5 mt-2 flex-wrap">
                 {flag.tags.map(tag => (
-                  <span key={tag} className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">{tag}</span>
+                  <span key={tag} className="text-xs px-1.5 py-0.5 rounded-sm bg-gray-100 text-gray-600">{tag}</span>
                 ))}
               </div>
             )}

@@ -51,13 +51,13 @@ export function SegmentsPage() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setEditing(seg)}
-                  className="p-1.5 text-gray-400 hover:text-gray-600 rounded"
+                  className="p-1.5 text-gray-400 hover:text-gray-600 rounded-sm"
                 >
                   <Pencil className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => deleteSegment(seg.id)}
-                  className="p-1.5 text-gray-400 hover:text-red-500 rounded"
+                  className="p-1.5 text-gray-400 hover:text-red-500 rounded-sm"
                 >
                   <Trash2 className="h-4 w-4" />
                 </button>

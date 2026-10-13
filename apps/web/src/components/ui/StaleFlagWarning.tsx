@@ -14,7 +14,7 @@ export function StaleFlagWarning({ updatedAt }: Props) {
 
   return (
     <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-sm">
-      <AlertTriangle className="h-4 w-4 flex-shrink-0" />
+      <AlertTriangle className="h-4 w-4 shrink-0" />
       <span>This flag was last modified <strong>{label}</strong>. Is it still needed?</span>
     </div>
   )

@@ -61,7 +61,7 @@ export function SegmentBuilder({ segment, onClose }: Props) {
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="Beta users"
-              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
           <div>
@@ -70,7 +70,7 @@ export function SegmentBuilder({ segment, onClose }: Props) {
               value={description}
               onChange={e => setDescription(e.target.value)}
               placeholder="Optional description"
-              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
@@ -90,7 +90,7 @@ export function SegmentBuilder({ segment, onClose }: Props) {
                   <select
                     value={cond.attribute}
                     onChange={e => updateCondition(idx, { attribute: e.target.value })}
-                    className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                    className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
                   >
                     {COMMON_ATTRIBUTES.map(a => <option key={a} value={a}>{a}</option>)}
                     {!COMMON_ATTRIBUTES.includes(cond.attribute) && (
@@ -100,7 +100,7 @@ export function SegmentBuilder({ segment, onClose }: Props) {
                   <select
                     value={cond.operator}
                     onChange={e => updateCondition(idx, { operator: e.target.value as Condition['operator'] })}
-                    className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                    className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
                   >
                     {OPERATORS.map(op => <option key={op.value} value={op.value}>{op.label}</option>)}
                   </select>
@@ -112,7 +112,7 @@ export function SegmentBuilder({ segment, onClose }: Props) {
                       updateCondition(idx, { value: val })
                     }}
                     placeholder="value"
-                    className="flex-1 min-w-24 text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                    className="flex-1 min-w-24 text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-hidden focus:ring-1 focus:ring-brand-500"
                   />
                   <button onClick={() => setConditions(prev => prev.filter((_, i) => i !== idx))} className="text-gray-400 hover:text-red-500">
                     <Trash2 className="h-3.5 w-3.5" />

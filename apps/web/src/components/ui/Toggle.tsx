@@ -15,7 +15,7 @@ export function Toggle({ checked, onChange, disabled = false, size = 'md' }: Pro
       disabled={disabled}
       onClick={() => onChange(!checked)}
       className={clsx(
-        'relative inline-flex items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2',
+        'relative inline-flex items-center rounded-full transition-colors focus:outline-hidden focus:ring-2 focus:ring-brand-500 focus:ring-offset-2',
         size === 'md' ? 'h-6 w-11' : 'h-4 w-7',
         checked ? 'bg-brand-500' : 'bg-gray-300',
         disabled && 'opacity-50 cursor-not-allowed'
@@ -23,7 +23,7 @@ export function Toggle({ checked, onChange, disabled = false, size = 'md' }: Pro
     >
       <span
         className={clsx(
-          'inline-block rounded-full bg-white shadow transition-transform',
+          'inline-block rounded-full bg-white shadow-sm transition-transform',
           size === 'md' ? 'h-4 w-4' : 'h-2.5 w-2.5',
           size === 'md'
             ? checked ? 'translate-x-6' : 'translate-x-1'
