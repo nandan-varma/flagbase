@@ -1,6 +1,7 @@
 import { FastifyPluginAsync } from 'fastify'
 import { z } from 'zod'
 import bcrypt from 'bcryptjs'
+import rateLimit from '@fastify/rate-limit'
 import { db } from '../db/client'
 import { organizations, users } from '../db/schema'
 import { eq } from 'drizzle-orm'
@@ -29,6 +30,8 @@ function makeTokens(app: Parameters<FastifyPluginAsync>[0], user: { id: string; 
 }
 
 export const authRoutes: FastifyPluginAsync = async (app) => {
+  await app.register(rateLimit, { max: 10, timeWindow: '1 minute' })
+
   app.post('/register', async (request, reply) => {
     const body = registerSchema.parse(request.body)
 
